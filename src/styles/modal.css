@@ -1,0 +1,195 @@
+.modalController {
+    left: 6%;
+    top: 20%;
+    height: 65%;
+    border-radius: 8px;
+    border: none;
+}
+
+.modalContainer {
+    font-family: var(--font-family-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.modalHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.titleModal {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #212529;
+}
+
+.closeButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 10px;
+    width: 35px;
+    height: 30px;
+    background-color: #F1F3F5;
+    border-radius: 4px;
+    border: none;
+    font-family: var(--font-family-2);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #495057;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: var(--color-grey-3);
+    color: #495057;
+}
+
+.textModal {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.titleModalTwo {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #212529;
+}
+
+.divInputModal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.divInput {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    position: relative;
+}
+
+.inputModal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 13%;
+    width: 100%;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1.5px solid #ADB5BD;
+    border-radius: 8px;
+}
+
+.siglaReal {
+    position: absolute;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #495057;
+    top: 30%;
+    left: 5%;
+}
+
+.modalSelect {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modalSelect>button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 14px;
+    width: 100%;
+    height: 2rem;
+    background: #FFFFFF;
+    border: 1.5px solid #F1F3F5;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: #495057;
+    cursor: pointer;
+}
+
+.modalSelect>button:hover {
+    color: var(--color-brand-1);
+    border: 1.5px solid var(--color-brand-1);
+}
+
+.modalSelect>button:focus {
+    color: var(--color-brand-1);
+    border: 1.5px solid var(--color-brand-1);
+}
+
+.divButtonsModal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.divButtonsModal>button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 14px;
+    gap: 10px;
+    width: 45%;
+    height: 31px;
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: #495057;
+    cursor: pointer;
+
+}
+
+.divButtonsModal>button:hover {
+    background: #6741D9;
+    border: 1.5px solid #6741D9;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .modalController {
+        left: 30%;
+        top: 20%;
+        height: 65%;
+        border-radius: 8px;
+        border: none;
+    }
+}

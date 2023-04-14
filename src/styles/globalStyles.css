@@ -18,7 +18,7 @@
   --color-grey-5: #f1f3f5;
   --color-grey-1-opacity-5: rgba(0, 0, 0, 0.5);
   --fixed-white: #ffffff;
-  --color-mode: #ffffff;
+
 
   --font-size-1: 1.25rem;
   --font-size-2: 1rem;
@@ -43,16 +43,7 @@
 
 body {
   font-family: var(--font-family-1);
-}
-
-.container {
-  max-width: 43rem;
-  margin: 0 auto;
-}
-
-@media (max-width: 700px) {
-  .container {
-    max-width: 43rem;
-    margin: 0 1rem;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction:column;
 }

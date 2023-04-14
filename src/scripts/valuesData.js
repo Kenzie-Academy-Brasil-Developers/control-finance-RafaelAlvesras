@@ -1,6 +1,4 @@
-const valuesCategory = ["Entrada", "Saída"];
-
-let insertedValues = [
+export let insertedValues = [
   {
     id: 1,
     value: 90.0,
@@ -17,3 +15,20 @@ let insertedValues = [
     categoryID: 0,
   },
 ];
+
+export let entryValues = []
+
+export let outValues = []
+
+export function categoryLists(list, arrayOne, arrayTwo) {
+    
+   list.forEach(element => {
+        if(element.categoryID === 0){
+          arrayOne.push(element)
+        } else if(element.categoryID === 1){
+          element.value = (element.value) * -1
+          arrayTwo.push(element)
+        }
+   });
+}
+

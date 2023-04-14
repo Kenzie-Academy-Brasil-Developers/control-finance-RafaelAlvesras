@@ -1,26 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Finance</title>
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      name="description"
-      content="Control Finance - Seu controle financeiro"
-    />
-    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-  </head>
-  <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./src/assets/img/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+  <link rel="stylesheet" href="./src/styles/modal.css" />
+
+  <title>Control Finance</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="./src/assets//img/Control Finance.jpg" alt="Control Finance" class="logo">
+      <button class="buttonOpenModal">Registrar novo valor</button>
+      <dialog class="modalController">
+        <div class="modalContainer">
+          <div class="modalHeader">
+            <h2 class="titleModal"> Registro de valor</h2>
+            <button class="closeButton">x</button>
+          </div>
+          <form class="modalForm">
+            <p class="textModal">
+              Digite o valor e em seguida aperte no botão referente ao tipo do valor
+            </p>
+            <div class="divInputModal">
+              <h3 class="titleModalTwo">Valor</h3>
+              <div class="divInput">
+                <input type="number" class="inputModal" id="inputModal" placeholder="00,00">
+                <label class="siglaReal">R$</label>
+              </div>
+            </div>
+            <div class="modalSelect">
+              <h3 class="titleModalTwo">Tipo de valor</h3>
+              <button id="buttonIn">Entrada</button>
+              <button id="buttonOut">Saída</button>
+            </div>
+            <div class="divButtonsModal">
+              <button class="cancelButton">Cancelar</button>
+              <button class="InsertValueButton">Inserir valor</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
+    </nav>
+  </header>
+  <main class="mainContainer">
+    <section>
+      <div class="navMain">
+        <h1 class="navMainTitle">Resumo financeiro</h1>
+        <ul class="filterList">
+          <li class="filterButton" id="filterAll">Todos</li>
+          <li class="filterButton" id="filterIn">Entradas</li>
+          <li class="filterButton" id="filterOut">Saídas</li>
+        </ul>
+      </div>
+      <div class="sumDiv">
+        <h1 class="sumDivTitle">Soma dos valores</h1>
+        <p class="sumAll">
+
+        </p>
+      </div>
+      <div class="divListReleases">
+        <ul class="listReleases">
+
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/scripts/index.js"></script>
+</body>
+
 </html>
