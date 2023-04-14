@@ -31,10 +31,6 @@ export function newReleaseRegister(list) {
             categoryID: categoryIdRelease
         }
 
-        if(newRelease.categoryID == 1){
-            newRelease.value = parseFloat(+(inputModal.value)) * -1
-        }
-
         const listReleases = document.querySelector(".listReleases")
         listReleases.innerHTML = []
         list.unshift(newRelease)

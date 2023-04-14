@@ -18,7 +18,12 @@ export function renderReleases(list) {
             typeItem.innerText = "Saída"
         }
 
-        valueItem.innerText = `R$ ${element.value.toFixed(2)}`
+        if (element.categoryID == 0) {
+            valueItem.innerText = `R$ ${element.value.toFixed(2)}`
+        } else if (element.categoryID == 1) {
+            valueItem.innerText = `R$ ${element.value.toFixed(2) * -1}`
+        }
+
         deleteItemButton.src = "./src/assets/img/trash.png"
         deleteItemButton.dataset.buttonID = element.id
 
@@ -33,7 +38,7 @@ export function renderReleases(list) {
         typeDelDiv.append(typeItem, deleteItemButton)
 
     });
-    
+
     deleteRelease(list)
 }
 
@@ -43,18 +48,18 @@ function deleteRelease(list) {
     buttonsDelete.forEach(button => {
         button.addEventListener("click", (event) => {
 
-        const dataSetButtonID = event.target.dataset.buttonID
+            const dataSetButtonID = event.target.dataset.buttonID
 
-        const findReleaseIndex = list.findIndex(release => release.id === Number(dataSetButtonID))
+            const findReleaseIndex = list.findIndex(release => release.id === Number(dataSetButtonID))
 
-        const removedRelease = list.splice(findReleaseIndex, 1)
+            const removedRelease = list.splice(findReleaseIndex, 1)
 
-       const listReleases = document.querySelector(".listReleases")
-       listReleases.innerHTML = []
-       removedRelease
-       renderReleases(list)
-       renderSum(list)
-    })
+            const listReleases = document.querySelector(".listReleases")
+            listReleases.innerHTML = []
+            removedRelease
+            renderReleases(list)
+            renderSum(list)
+        })
     }
     )
 }

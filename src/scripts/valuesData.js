@@ -26,7 +26,6 @@ export function categoryLists(list, arrayOne, arrayTwo) {
         if(element.categoryID === 0){
           arrayOne.push(element)
         } else if(element.categoryID === 1){
-          element.value = (element.value) * -1
           arrayTwo.push(element)
         }
    });
