@@ -1,4 +1,4 @@
-import { insertedValues, entryValues, outValues } from "./valuesData.js"
+import { insertedValues } from "./valuesData.js"
 
 export function renderReleases(list) {
     const listReleases = document.querySelector(".listReleases")
@@ -80,14 +80,16 @@ export function renderFilter() {
 
     ButtonFilterIn.addEventListener("click", () => {
         listReleases.innerHTML = []
-        renderReleases(entryValues)
-        renderSum(entryValues)
+        const newArr = insertedValues.filter(elt => elt.categoryID === 0)
+        renderReleases(newArr)
+        renderSum(newArr)
     })
 
     ButtonFilterOut.addEventListener("click", () => {
         listReleases.innerHTML = []
-        renderReleases(outValues)
-        renderSum(outValues)
+        const newArr = insertedValues.filter(elt => elt.categoryID === 1)
+        renderReleases(newArr)
+        renderSum(newArr)
     })
 
 }

@@ -1,6 +1,4 @@
 import { renderReleases, renderSum, renderFilter } from "./render.js"
-import { categoryLists, entryValues, outValues, insertedValues } from "./valuesData.js"
-
 
 export function newReleaseRegister(list) {
    
@@ -37,7 +35,6 @@ export function newReleaseRegister(list) {
         renderReleases(list)
         renderSum(list)
         renderFilter()
-        categoryLists(insertedValues, entryValues, outValues)
         modal.close()
     })
 

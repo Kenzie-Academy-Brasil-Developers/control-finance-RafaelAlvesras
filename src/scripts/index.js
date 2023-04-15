@@ -1,4 +1,4 @@
-import { categoryLists, entryValues, outValues, insertedValues } from "./valuesData.js"
+import {insertedValues } from "./valuesData.js"
 import {renderReleases, renderSum, renderFilter} from "./render.js"
 import {renderModal, newReleaseRegister} from "./modal.js"
 
@@ -7,4 +7,3 @@ renderSum(insertedValues)
 newReleaseRegister(insertedValues)
 renderFilter()
 renderModal()
-categoryLists(insertedValues, entryValues, outValues)
