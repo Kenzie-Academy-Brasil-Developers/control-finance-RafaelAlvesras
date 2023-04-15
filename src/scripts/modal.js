@@ -38,11 +38,13 @@ export function newReleaseRegister(list) {
         renderSum(list)
         renderFilter()
         modal.close()
+        inputModal.value = ""
     })
 
     cancelButton.addEventListener("click", (event) => {
         event.preventDefault()
         modal.close()
+        inputModal.value = ""
     })
 }
 
