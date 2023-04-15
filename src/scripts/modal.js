@@ -1,11 +1,12 @@
 import { renderReleases, renderSum, renderFilter } from "./render.js"
 
 export function newReleaseRegister(list) {
-   
+
     const modal = document.querySelector(".modalController")
     const inputModal = document.querySelector(".inputModal")
     const buttonIn = document.querySelector("#buttonIn")
     const buttonOut = document.querySelector("#buttonOut")
+    const cancelButton = document.querySelector(".cancelButton")
     const InsertValueButton = document.querySelector(".InsertValueButton")
 
     let categoryIdRelease = 0
@@ -17,6 +18,7 @@ export function newReleaseRegister(list) {
 
     buttonOut.addEventListener("click", (event) => {
         event.preventDefault()
+        inputModal.value = inputModal.value * -1
         categoryIdRelease = 1
     })
 
@@ -38,7 +40,10 @@ export function newReleaseRegister(list) {
         modal.close()
     })
 
-
+    cancelButton.addEventListener("click", (event) => {
+        event.preventDefault()
+        modal.close()
+    })
 }
 
 export function renderModal() {

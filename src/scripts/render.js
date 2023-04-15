@@ -1,9 +1,9 @@
-import { insertedValues } from "./valuesData.js"
+import { insertedValues, correctValuesInserteds } from "./valuesData.js"
 
 export function renderReleases(list) {
     const listReleases = document.querySelector(".listReleases")
 
-    list.forEach(element => {
+    correctValuesInserteds(list).forEach(element => {
 
         const listItem = document.createElement("li")
         const valueItem = document.createElement("h4")
@@ -18,11 +18,9 @@ export function renderReleases(list) {
             typeItem.innerText = "Saída"
         }
 
-        if (element.categoryID == 0) {
-            valueItem.innerText = `R$ ${element.value.toFixed(2)}`
-        } else if (element.categoryID == 1) {
-            valueItem.innerText = `R$ ${element.value.toFixed(2) * -1}`
-        }
+
+        valueItem.innerText = `R$ ${element.value.toFixed(2)}`
+
 
         deleteItemButton.src = "./src/assets/img/trash.png"
         deleteItemButton.dataset.buttonID = element.id
@@ -97,7 +95,9 @@ export function renderFilter() {
 export function renderSum(list) {
     const sumAll = document.querySelector(".sumAll")
 
-    let sumAllResult = list.reduce((accumulator, element) => accumulator + element.value, 0)
+    let sumAllResult = correctValuesInserteds(list).reduce((accumulator, element) => accumulator + element.value, 0)
 
     sumAll.innerText = `R$ ${sumAllResult.toFixed(2)}`
 }
+
+correctValuesInserteds(insertedValues)
