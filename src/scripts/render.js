@@ -1,41 +1,49 @@
-import { insertedValues, correctValuesInserteds } from "./valuesData.js"
+import { insertedValues } from "./valuesData.js"
+import { emptyButtonOpenModal } from "./modal.js"
 
 export function renderReleases(list) {
     const listReleases = document.querySelector(".listReleases")
+    let emptyCard = renderEmptyList()
 
-    correctValuesInserteds(list).forEach(element => {
+    if (list.length > 0) {
+        list.forEach(element => {
 
-        const listItem = document.createElement("li")
-        const valueItem = document.createElement("h4")
-        const typeDelDiv = document.createElement("div")
-        const typeItem = document.createElement("p")
-        const deleteItemButton = document.createElement("img")
-
-
-        if (element.categoryID == 0) {
-            typeItem.innerText = "Entrada"
-        } else if (element.categoryID == 1) {
-            typeItem.innerText = "Saída"
-        }
+            const listItem = document.createElement("li")
+            const valueItem = document.createElement("h4")
+            const typeDelDiv = document.createElement("div")
+            const typeItem = document.createElement("p")
+            const deleteItemButton = document.createElement("img")
 
 
-        valueItem.innerText = `R$ ${element.value.toFixed(2)}`
+            if (element.categoryID == 0) {
+                typeItem.innerText = "Entrada"
+            } else if (element.categoryID == 1) {
+                typeItem.innerText = "Saída"
+            }
 
 
-        deleteItemButton.src = "./src/assets/img/trash.png"
-        deleteItemButton.dataset.buttonID = element.id
+            valueItem.innerText = `R$ ${element.value.toFixed(2)}`
 
-        listItem.classList.add("listItem")
-        valueItem.classList.add("valueItem")
-        typeDelDiv.classList.add("typeDelDiv")
-        typeItem.classList.add("typeItem")
-        deleteItemButton.classList.add("deleteItemButton")
 
-        listReleases.appendChild(listItem)
-        listItem.append(valueItem, typeDelDiv)
-        typeDelDiv.append(typeItem, deleteItemButton)
+            deleteItemButton.src = "./src/assets/img/trash.png"
+            deleteItemButton.dataset.buttonID = element.id
 
-    });
+            listItem.classList.add("listItem")
+            valueItem.classList.add("valueItem")
+            typeDelDiv.classList.add("typeDelDiv")
+            typeItem.classList.add("typeItem")
+            deleteItemButton.classList.add("deleteItemButton")
+
+            listReleases.appendChild(listItem)
+            listItem.append(valueItem, typeDelDiv)
+            typeDelDiv.append(typeItem, deleteItemButton)
+
+        })
+    }
+    else {
+        listReleases.appendChild(emptyCard)
+        emptyButtonOpenModal()
+    }
 
     deleteRelease(list)
 }
@@ -95,9 +103,27 @@ export function renderFilter() {
 export function renderSum(list) {
     const sumAll = document.querySelector(".sumAll")
 
-    let sumAllResult = correctValuesInserteds(list).reduce((accumulator, element) => accumulator + element.value, 0)
+    let sumAllResult = list.reduce((accumulator, element) => accumulator + element.value, 0)
 
     sumAll.innerText = `R$ ${sumAllResult.toFixed(2)}`
 }
 
-correctValuesInserteds(insertedValues)
+function renderEmptyList() {
+
+    const divEmptyList = document.createElement("li")
+    const divEmptyTitle = document.createElement("h3")
+    const divEmptyText = document.createElement("p")
+
+    divEmptyTitle.innerText = "Nenhum valor cadastrado"
+    divEmptyText.innerText = "Registrar novo valor"
+
+    divEmptyList.append(divEmptyTitle, divEmptyText)
+
+    divEmptyList.classList.add("emptyCard")
+    divEmptyTitle.classList.add("divEmptyTitle")
+    divEmptyText.classList.add("divEmptyText")
+
+    return divEmptyList
+}
+
+// correctValuesInserteds(insertedValues)

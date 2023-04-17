@@ -33,7 +33,7 @@
             <div class="divInputModal">
               <h3 class="titleModalTwo">Valor</h3>
               <div class="divInput">
-                <input type="number" class="inputModal" id="inputModal" placeholder="00,00">
+                <input type="number" class="inputModal" id="inputModal" placeholder="00,00" step="0.01" onkeydown="if (event.key === 'e' || event.key === 'E') event.preventDefault();" required>
                 <label class="siglaReal">R$</label>
               </div>
             </div>
@@ -64,12 +64,12 @@
       <div class="sumDiv">
         <h1 class="sumDivTitle">Soma dos valores</h1>
         <p class="sumAll">
-
+          
         </p>
       </div>
       <div class="divListReleases">
         <ul class="listReleases">
-
+       
         </ul>
       </div>
     </section>

@@ -52,12 +52,25 @@ export function renderModal() {
     const modal = document.querySelector(".modalController")
     const buttonOpenModal = document.querySelector(".buttonOpenModal")
 
+
     buttonOpenModal.addEventListener("click", () => {
         modal.showModal()
 
         closeModal()
     })
 
+}
+
+export function emptyButtonOpenModal() {
+    
+    const modal = document.querySelector(".modalController")
+    const emptyButton = document.querySelector(".emptyCard")
+
+    emptyButton.addEventListener("click", () => {
+        modal.showModal()
+
+        closeModal()
+    })
 }
 
 function closeModal() {
