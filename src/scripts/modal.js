@@ -18,7 +18,7 @@ export function newReleaseRegister(list) {
 
     buttonOut.addEventListener("click", (event) => {
         event.preventDefault()
-        inputModal.value = inputModal.value * -1
+        inputModal.value = inputModal.value
         categoryIdRelease = 1
     })
 
